@@ -1,0 +1,52 @@
+:root {
+    --wcontainer: 142px;
+    --hcontainer: 145px;
+    --wear: 50px;
+    --hear: 50px;
+    --wface: 85px;
+    --hface: 85px;
+}
+
+.container {
+    width: var(--wcontainer);
+    height: var(--hcontainer);
+    position: relative;
+}
+
+.ear-left,
+.ear-right {
+    width: var(--wear);
+    height: var(--hear);
+    border-radius: 50%;
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+}
+
+.ear-right {
+    right: 0;
+}
+
+.face,
+.face img {
+    width: var(--wface);
+    height: var(--hface);
+    border-radius: 50%;
+}
+
+.face {
+    border: 10px solid #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.face img {
+    background-image: url(../images/face.jpg);
+    background-position: center;
+    background-size: cover;
+}

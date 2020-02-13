@@ -1,0 +1,25 @@
+.game__container {
+    max-width: 320px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.24);
+    margin: 0 auto;
+    border-radius: 4px;
+    padding-top: 100px;
+}
+
+.match-hands__container {
+    display: flex;
+    margin-right: 8px;
+}
+
+.options-hands__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.options-hands__container > a img {
+    border-radius: 18px;
+}

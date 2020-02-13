@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+    --white: #f2f2f2;
+    --black: #222222;
+}
+
+body {
+    background-color: var(--white);
+}
+
+.Game {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Game__figure {
+    margin-bottom: 2rem;
+}
+
+.Game__figure-body {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Game__figure-secretWord .line {
+    width: 36px;
+    height: 7px;
+    border-radius: 2px;
+    background-color: var(--black);
+    display: inline-block;
+    margin: 0 .6rem;
+}
+
+.success {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 .5rem;
+}
+
+.Game__board {
+    display: grid;
+    grid-template-columns: repeat(9, 32px);
+    grid-gap: 1rem
+}
+
+.Game__board .btn {
+    width: 32px;
+    height: 32px;
+    background-color: var(--white);
+    box-shadow: 6px 6px 12px rgba(0,0,0,.16), -6px -6px 12px rgba(255,255,255,.96);
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.Game__board .btn-correct {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(21, 255, 158);
+    box-shadow: 6px 6px 12px rgba(0,0,0,.16), -6px -6px 12px rgba(255,255,255,.96);
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    cursor: default;
+}

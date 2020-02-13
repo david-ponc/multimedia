@@ -1,0 +1,61 @@
+:root {
+    --wcontainer: 142px;
+    --hcontainer: 145px;
+    --wear: 50px;
+    --hear: 50px;
+    --wface: 85px;
+    --hface: 85px;
+}
+
+.container,
+.container3 {
+    width: var(--wcontainer);
+    height: var(--hcontainer);
+    position: relative;
+}
+
+.container3 {
+    --wcontainer: 260px;
+    --hcontainer: 290px;
+}
+
+.ear-left,
+.ear-right,
+.ear-left3,
+.ear-right3 {
+    width: var(--wear);
+    height: var(--hear);
+    border-radius: 50%;
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+}
+
+.ear-right,
+.ear-right3 {
+    right: 0;
+}
+
+.face,
+.face3 {
+    width: var(--wface);
+    height: var(--hface);
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.face3 {
+    --wface: 150px;
+    --hface: 150px;
+}
+.ear-left3,
+.ear-right3 {
+    --wear: 100px;
+    --hear: 100px;
+}
