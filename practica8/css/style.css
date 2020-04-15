@@ -1,36 +1,23 @@
 .game__container {
-    max-width: 320px;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.24);
+    width: 340px;
+    height: 317px;
+    background-image: url(../img/tablero2.png);
+    background-size: cover;
     margin: 0 auto;
-    border-radius: 4px;
-    padding-top: 100px;
 }
 
-.match-hands__container {
+.line {
+    width: 100%;
     display: flex;
-    margin-right: 8px;
-    min-width: 282px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
 }
 
-.options-hands__container {
-    display: flex;
-    flex-direction: column;
-}
-
-.options-hands__container > a img {
-    border-radius: 18px;
-}
-
-#message {
-    position: absolute;
-    font-size: 2rem;
-    font-weight: bold;
-    top: 1rem;
-    margin: 0 auto;
+.line .cuadro {
+    width: 80px;
+    height: 80px;
+    /* background-image: url(../img/o.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
 }

@@ -1,23 +1,17 @@
-.game__container {
-    width: 340px;
-    height: 317px;
-    background-image: url(../img/tablero2.png);
-    background-size: cover;
-    margin: 0 auto;
+.visor {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
-.line {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2.4rem;
+img {
+    position: absolute;
+    animation: ani 1s infinite;
 }
 
-.line .cuadro {
-    width: 80px;
-    height: 80px;
-    /* background-image: url(../img/o.png); */
-    background-size: cover;
-    background-repeat: no-repeat;
+.emoji {
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/descarga.png);
 }

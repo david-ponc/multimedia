@@ -1,78 +1,67 @@
 :root {
-    --a__a-s: 0px;
-    --a__a-c: 25px;
+    --wcontainer: 142px;
+    --hcontainer: 145px;
+    --wear: 50px;
+    --hear: 50px;
+    --wface: 85px;
+    --hface: 85px;
 }
-.cilindro {
-    width: 100px;
-    height: 200px;
-    /* background-color: #04926D; */
+
+.container {
+    width: var(--wcontainer);
+    height: var(--hcontainer);
     position: relative;
 }
 
-.tapa-s,
-.tapa-i {
-    width: 100px;
-    height: 50px;
+.ear-left,
+.ear-right {
+    width: var(--wear);
+    height: var(--hear);
     border-radius: 50%;
+    background-color: black;
+    display: inline-block;
     position: absolute;
+    transition: all .3s;
 }
 
-.tapa-s {
-    background-color: #29FFC6;
-    z-index: 10;
+.ear-right {
+    right: 0;
 }
 
-.tapa-i {
-    background-color: #29FFC6;
-    top: 150px;
-    z-index: 10;
-}
-
-.cuerpo {
-    width: 100px;
-    height: 150px;
-    background-color: #0DDFA7;
-    position: absolute;
-    top: 25px;
-}
-
-.agua-i {
-    width: 100px;
-    height: 50px;
+.face,
+.face img {
+    width: var(--wface);
+    height: var(--hface);
     border-radius: 50%;
-    position: absolute;
-    z-index: 11;
-    background-color: #0969FF;
-    bottom: -25px;
+    transition: all .3s;
 }
 
-.agua-s {
-    width: 100px;
-    height: 50px;
-    border-radius: 50%;
+.face {
+    border: 10px solid #000;
     position: absolute;
-    z-index: 20;
-    background-color: rgb(9, 136, 255);
-    bottom: var(--a__a-s);
-    transition: all .3s ease;
-}
-
-.agua-cuerpo {
-    width: 100px;
-    height: var(--a__a-c);
-    position: absolute;
-    z-index: 12;
-    background-color: #0969FF;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
-    transition: all .3s ease;
+    margin: auto;
+    overflow: hidden;
+    transition: all .3s;
 }
 
-.cilindro:hover {
-    --a__a-s: 50px;
-    --a__a-c: 75px;
+.face img {
+    background-image: url(../images/face.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
-.cilindro:active {
-    --a__a-s: 125px;
-    --a__a-c: 150px;
+.container:hover .ear-left,.container:hover .ear-right{
+    background-color: red;
+}
+
+.container:hover .face {
+    border: 10px solid red;
+}
+
+.container:hover .face img {
+    transform: scale(1.2) rotate(90deg);
 }

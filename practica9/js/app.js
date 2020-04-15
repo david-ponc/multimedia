@@ -1,40 +1,77 @@
-let i = "o";
-let mat = [["","",""],["","",""],["","",""]];
-
-function position(x, y) {
-    i = i == "o" ? "x" : "o";
-    let line = "p" + x + y;
-    console.log(line);
-    document.getElementById(line).removeAttribute("onclick");
-    document.getElementById(line).style.backgroundImage = `url(img/${i}.png)`;
-    console.log(i);
-    mat[x][y] = i;
-    console.log(valida(i));
+window.onload = () => {
+    preload();
 }
 
-function valida(id) {
-    for(let i = 0; i < 3; i++) {
-        if(mat[i][2] != "" && mat[i][1] != "" && mat[i][0] != "" && mat[i][0] == mat[i][1] && mat[i][2] == mat[i][1]) {
-            return `ganaste ${id}`;
-        }
+var x = 0;
+function preload() {
+    x = x == 26 ? 0 : x;
+    if(x == 1) {
+        document.getElementById('imge').style.left = "0px";
+    }else if(x == 2) {
+        document.getElementById('imge').style.left = "-20px";
+    }else if(x == 3) {
+        document.getElementById('imge').style.left = "-40px";
+    }else if(x == 4) {
+        document.getElementById('imge').style.left = "-60px";
+    }else if(x == 5) {
+        document.getElementById('imge').style.left = "-80px";
+    }else if(x == 6) {
+        document.getElementById('imge').style.left = "0px";
+        document.getElementById('imge').style.top = "-20px";
+    }else if(x == 7) {
+        document.getElementById('imge').style.left = "-20px";
+    }else if(x == 8) {
+        document.getElementById('imge').style.left = "-40px";
+    }else if(x == 9) {
+        document.getElementById('imge').style.left = "-60px";
+    }else if(x == 10) {
+        document.getElementById('imge').style.left = "-80px";
+    }else if(x == 11) {
+        document.getElementById('imge').style.left = "0px";
+        document.getElementById('imge').style.top = "-40px";
+    }else if(x == 12) {
+        document.getElementById('imge').style.left = "-20px";
+    }else if(x == 13) {
+        document.getElementById('imge').style.left = "-40px";
+    }else if(x == 14) {
+        document.getElementById('imge').style.left = "-60px";
+    }else if(x == 15) {
+        document.getElementById('imge').style.left = "-80px";
+    }else if(x == 16) {
+        document.getElementById('imge').style.left = "0px";
+        document.getElementById('imge').style.top = "-60px";
+    }else if(x == 17) {
+        document.getElementById('imge').style.left = "-20px";
+    }else if(x == 18) {
+        document.getElementById('imge').style.left = "-40px";
+    }else if(x == 19) {
+        document.getElementById('imge').style.left = "-60px";
+    }else if(x == 20) {
+        document.getElementById('imge').style.left = "-80px";
+    }else if(x == 21) {
+        document.getElementById('imge').style.left = "0px";
+        document.getElementById('imge').style.top = "-80px";
+    }else if(x == 22) {
+        document.getElementById('imge').style.left = "-20px";
+    }else if(x == 23) {
+        document.getElementById('imge').style.left = "-40px";
+    }else if(x == 24) {
+        document.getElementById('imge').style.left = "-60px";
+    }else if(x == 25) {
+        MoverVisor('imge', 'left', '-80px');
     }
-    for(let i = 0; i < 3; i++) {
-        if(mat[2][i] != "" && mat[1][i] != "" && mat[0][i] != "" && mat[0][i] == mat[1][i] && mat[2][i] == mat[1][i]) {
-            return `ganaste ${id}`;
-        }
-    }
-    if(mat[0][0] != "" && mat[1][1] != "" && mat[2][2] != "" && mat[0][0] == mat[1][1] && mat[2][2] == mat[1][1]) {
-        return `ganaste ${id}`;
-    }
-    if(mat[0][2] != "" && mat[1][1] != "" && mat[2][0] != "" && mat[0][2] == mat[1][1] && mat[2][0] == mat[1][1]) {
-        return `ganaste ${id}`;
+    x++;
+    setTimeout('preload()', 600);
+}
+
+function MoverVisor(element, orientation, pixels) {
+    if(orientation == 'left') {
+        document.getElementById(element).style.left = pixels;
+    }else {
+        document.getElementById(element).style.top = pixels;
     }
 }
 
-function bloqueo() {
-    for(let i = 0; i < 3; i++) {
-        for(let i = 0; i < 3; i++) {
-            document.getElementById(`p${i}${j}`).removeAttribute("onclick");
-        }
-    }    
+function MoverVisorAbj(element, orientation, pixels) {
+    document.getElementById(element).style.orientation = pixels;
 }

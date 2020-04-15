@@ -1,0 +1,78 @@
+:root {
+    --a__a-s: 0px;
+    --a__a-c: 25px;
+}
+.cilindro {
+    width: 100px;
+    height: 200px;
+    /* background-color: #04926D; */
+    position: relative;
+}
+
+.tapa-s,
+.tapa-i {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.tapa-s {
+    background-color: #29FFC6;
+    z-index: 10;
+}
+
+.tapa-i {
+    background-color: #29FFC6;
+    top: 150px;
+    z-index: 10;
+}
+
+.cuerpo {
+    width: 100px;
+    height: 150px;
+    background-color: #0DDFA7;
+    position: absolute;
+    top: 25px;
+}
+
+.agua-i {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 11;
+    background-color: #0969FF;
+    bottom: -25px;
+}
+
+.agua-s {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 20;
+    background-color: rgb(9, 136, 255);
+    bottom: var(--a__a-s);
+    transition: all .3s ease;
+}
+
+.agua-cuerpo {
+    width: 100px;
+    height: var(--a__a-c);
+    position: absolute;
+    z-index: 12;
+    background-color: #0969FF;
+    bottom: 0;
+    transition: all .3s ease;
+}
+
+.cilindro:hover {
+    --a__a-s: 50px;
+    --a__a-c: 75px;
+}
+
+.cilindro:active {
+    --a__a-s: 125px;
+    --a__a-c: 150px;
+}

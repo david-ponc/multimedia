@@ -1,48 +1,40 @@
-const change = (name,player) => {
-    if(player == 1) {
-        document.getElementById(name).src = "img/piedra.png";
+let i = "o";
+let mat = [["","",""],["","",""],["","",""]];
+
+function position(x, y) {
+    i = i == "o" ? "x" : "o";
+    let line = "p" + x + y;
+    console.log(line);
+    document.getElementById(line).removeAttribute("onclick");
+    document.getElementById(line).style.backgroundImage = `url(img/${i}.png)`;
+    console.log(i);
+    mat[x][y] = i;
+    console.log(valida(i));
+}
+
+function valida(id) {
+    for(let i = 0; i < 3; i++) {
+        if(mat[i][2] != "" && mat[i][1] != "" && mat[i][0] != "" && mat[i][0] == mat[i][1] && mat[i][2] == mat[i][1]) {
+            return `ganaste ${id}`;
+        }
     }
-    if(player == 2) {
-        document.getElementById(name).src = "img/papel.png";
+    for(let i = 0; i < 3; i++) {
+        if(mat[2][i] != "" && mat[1][i] != "" && mat[0][i] != "" && mat[0][i] == mat[1][i] && mat[2][i] == mat[1][i]) {
+            return `ganaste ${id}`;
+        }
     }
-    if(player == 3) {
-        document.getElementById(name).src = "img/tijeras.png";
+    if(mat[0][0] != "" && mat[1][1] != "" && mat[2][2] != "" && mat[0][0] == mat[1][1] && mat[2][2] == mat[1][1]) {
+        return `ganaste ${id}`;
+    }
+    if(mat[0][2] != "" && mat[1][1] != "" && mat[2][0] != "" && mat[0][2] == mat[1][1] && mat[2][0] == mat[1][1]) {
+        return `ganaste ${id}`;
     }
 }
 
-function mano1(id) {
-    let ia = Math.floor(Math.random() * 3);
-    change('handright',id);
-    change('handleft',ia+1);
-    game(id,ia+1);
-}
-
-function mano2(id) {
-    let ia = Math.floor(Math.random() * 3);
-    change('handright',id);
-    change('handleft',ia+1);
-    game(id,ia+1);
-}
-
-function mano3(id) {
-    let ia = Math.floor(Math.random() * 3);
-    change('handright',id);
-    change('handleft',ia+1);
-    game(id,ia+1);
-}
-
-function game(user, ia) {
-    console.log(`user ${user}`);
-    console.log(`ia ${ia}`);
-    if(user == ia) {
-        document.getElementById('message').innerText = "Empate";
-        setTimeout(() => {window.location.reload()} ,2000);
-    }else if((user==1 && ia == 2) || (user==2 && ia == 3) || (user==3 && ia == 1)) {
-        document.getElementById('message').innerText = "Perdiste";
-        setTimeout(() => {window.location.reload()} ,2000);
-    }else {
-        document.getElementById('message').innerText = "Ganaste";
-        setTimeout(() => {window.location.reload()} ,2000);
-    }
-    
+function bloqueo() {
+    for(let i = 0; i < 3; i++) {
+        for(let i = 0; i < 3; i++) {
+            document.getElementById(`p${i}${j}`).removeAttribute("onclick");
+        }
+    }    
 }
